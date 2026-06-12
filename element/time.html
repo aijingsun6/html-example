@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>示例页面 — Aside</title>
+  <style>
+    :root {
+      --gap: 1rem;
+      --max-width: 1000px;
+      --accent: #0366d6;
+      --muted: #666;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      margin: 0;
+      padding: 1.25rem;
+      display: flex;
+      justify-content: center;
+      background: #f7f8fb;
+      color: #111;
+    }
+
+    .container {
+      width: 100%;
+      max-width: var(--max-width);
+      display: grid;
+      grid-template-columns: 1fr 300px;
+      gap: var(--gap);
+      align-items: start;
+    }
+
+    header,
+    footer {
+      grid-column: 1 / -1;
+      background: #fff;
+      padding: 0.75rem 1rem;
+      border-radius: 8px;
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+    }
+
+    main {
+      background: #fff;
+      padding: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+    }
+
+    aside {
+      background: #fff;
+      padding: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 1.25rem;
+      color: var(--accent);
+    }
+
+    h2 {
+      margin-top: 0;
+      font-size: 1rem;
+    }
+
+    p {
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container" role="main">
+    <header>
+      <h1>示例页面</h1>
+      <p style="margin:0; color:var(--muted);">展示基本的 HTML5 页面结构，包含 aside 侧栏。</p>
+    </header>
+
+    <main>
+      <article>
+        <h2>主要内容</h2>
+        <p>这里放置页面的主要信息。使用 &lt;main&gt; 和 &lt;article&gt; 标签可以提升语义化和可访问性。</p>
+        <p>在宽屏布局中，侧栏 (aside) 位于主内容的右侧；在窄屏设备上会自动堆叠到内容下面。</p>
+      </article>
+      <p>
+        <label for="start-date">Start date:</label>
+
+        <input type="date" id="start-date" name="trip-start" value="2018-07-22" min="2018-01-01" max="2018-12-31" />
+      </p>
+
+      <p>
+        <label for="meeting-time">选择预约的时间：</label>
+
+        <input type="datetime-local" id="meeting-time" name="meeting-time" value="2018-06-12T19:30"
+          min="2018-06-07T00:00" max="2018-06-14T00:00" />
+      </p>
+
+      <p>
+        <label for="start-month">Start month:</label>
+
+        <input type="month" id="start" name="start" min="2018-03" value="2018-05" />
+
+      </p>
+
+      <p>
+        <label for="appt">Choose a time for your meeting:</label>
+
+        <input type="time" id="appt" name="appt" min="09:00" max="18:00" required />
+
+        <small>Office hours are 9am to 6pm</small>
+      </p>
+
+      <p>
+        <label for="camp-week">Choose a week in May or June:</label>
+
+        <input type="week" name="week" id="camp-week" min="2018-W18" max="2018-W26" required />
+
+      </p>
+
+
+    </main>
+
+    <aside aria-labelledby="related-title">
+      <h2 id="related-title">相关信息</h2>
+      <p style="margin-top:0; color:var(--muted);">侧栏用于显示附加内容、导航或补充信息。</p>
+      <ul class="related-list">
+        <li><a href="#" rel="noopener">相关文章</a></li>
+        <li><a href="#" rel="noopener">快速链接</a></li>
+        <li><a href="#" rel="noopener">联系方式</a></li>
+      </ul>
+    </aside>
+
+    <footer>
+      <small>© 示例 — 简单的 HTML5 布局示例</small>
+    </footer>
+  </div>
+  <script>
+    window.onload = function () {
+      console.log('Page loaded');
+      var dateInput = document.getElementById('start-date');
+      dateInput.addEventListener('change', function () {
+        console.log('Selected date: ' + this.value);
+      })
+    };
+  </script>
+</body>
+
+</html>
