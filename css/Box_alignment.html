@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Box_alignment</title>
+  <style>
+    .box-1 {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+    }
+
+    .box-1 :first-child {
+      align-self: center;
+    }
+
+    .box-1 div {
+      background-color: aqua;
+      border: 1px solid black;
+      margin: 1px 1px;
+      padding: 1px 1px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box-1">
+    <div>One</div>
+    <div>Two</div>
+    <div>Three
+      <br>has
+      <br>extra
+      <br>text
+    </div>
+    <div>Four</div>
+    <div>Five</div>
+    <div>Six</div>
+  </div>
+</body>
+
+</html>
