@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box>* {
+      border: 2px solid rgb(96 139 168);
+      border-radius: 5px;
+      padding: 1em;
+      background-color: rgba(5, 121, 199, 0.2);
+    }
+
+    .box {
+      border: 2px dotted rgb(96 139 168);
+      padding: 1em;
+      display: flex;
+    }
+
+    .nested {
+      background-color: orange;
+      display: contents;
+      border: 2px solid rgb(219, 28, 14);
+    }
+  </style>
+
+</head>
+
+
+
+<body>
+  <div class="box">
+    <div>One</div>
+    <div>Two</div>
+    <div class="nested">
+      <div>Sub-item 1</div>
+      <div>Sub-item 2</div>
+    </div>
+  </div>
+</body>
+
+</html>

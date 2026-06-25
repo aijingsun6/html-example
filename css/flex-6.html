@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box {
+      border: 2px dotted rgb(96 139 168);
+      display: flex;
+      align-items: flex-start;
+      height: 200px;
+      flex-direction: column;
+    }
+
+    .box div {
+      background-color: rgb(91, 130, 156);
+      border: 2px solid rgb(96 139 168);
+      border-radius: 5px;
+      padding: 5px;
+    }
+
+    .box>*:first-child {
+      align-self: stretch;
+    }
+
+    .box .selected {
+      align-self: center;
+    }
+  </style>
+
+</head>
+
+
+
+<body>
+  <div class="box">
+    <div>一</div>
+    <div>二</div>
+    <div class="selected">三</div>
+    <div>四</div>
+  </div>
+</body>
+
+</html>
